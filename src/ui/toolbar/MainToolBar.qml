@@ -67,7 +67,7 @@ Rectangle {
         QGCToolBarButton {
             id:                     currentButton
             Layout.preferredHeight: viewButtonRow.height
-            icon.source:            "/res/QGCLogoFull"
+            icon.source:            "/res/resources/icons/qgroundcontrol"
             logo:                   true
             onClicked:              mainWindow.showToolSelectDialog()
         }
@@ -215,5 +215,20 @@ Rectangle {
             anchors.fill:   parent
             onClicked:      largeProgressBar._userHide = true
         }
+    }
+    QGCToolBarButton {
+        id:                     logoutBtn
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right:          parent.right
+        anchors.rightMargin:    8
+        text:                   qsTr("Logout")
+        font.letterSpacing:     2
+        font.wordSpacing:       1.2
+        font.pointSize:         11
+        Layout.preferredHeight: viewButtonRow.height
+        onClicked:              change()
+    }
+    function change(){
+        logoutBtn.text = qsTr("Login")
     }
 }
